@@ -1,5 +1,1 @@
-hlowrd
-================
-使用Express+MongoDB搭建个人博客，详细文档请见
-https://github.com/nswbmw/N-blog 的 wiki
-
+使用H-ui模版写的后台管理， node搭建的静态服务，layer弹出框，laypage分页   以及各种交互
