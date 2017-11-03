@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--[if lt IE 9]>
+<!--<script type="text/javascript" src="lib/html5shiv.js"></script>-->
+    <!--<script type="text/javascript" src="lib/respond.min.js"></script>-->
+    <!--<![endif]&ndash;&gt;-->
+    <link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="../css/base.css"/>-->
+    <!--[if IE 6]>
+    <!--<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>-->
+    <!--<script>DD_belatedPNG.fix('*');</script>-->
+    <!--<![endif]&ndash;&gt;-->
+    <title>项目管理-内部项目-添加项目</title>
+    <style type="text/css">
+        .input-xiangmu {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+<article class="page-container">
+    <!--<form class="form form-horizontal" id="form-add">-->
+        <!--<div class="row cl">-->
+            <!--<div class="col-xs-9 col-sm-9">-->
+                <!--<div class="row cl">-->
+                    <!--<label class="form-label col-xs-3 col-sm-2"><span class="c-red">*</span>户型名称：</label>-->
+                    <!--<div class="formControls col-xs-3 col-sm-4">-->
+                        <!--<input type="text" class="input-text" placeholder="请输入户型别名" id="typeDatail" name="typeDatail">-->
+                    <!--</div>-->
+                    <!--<label class="form-label col-xs-3 col-sm-2"><span class="c-red">*</span>户型规格：</label>-->
+                    <!--<div class="formControls col-xs-3 col-sm-4">-->
+                        <!--<select name="housetypeId" class="input-text" id="housetypeId" style="width:100px"></select>&nbsp;&nbsp;-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row cl">-->
+                    <!--<label class="form-label col-xs-3 col-sm-2"><span class="c-red">*</span>大约面积：</label>-->
+                    <!--<div class="formControls col-xs-3 col-sm-4">-->
+                        <!--<input type="text" class="input-text" placeholder="请输入户型大约面积" id="typeArea" name="typeArea">-->
+                    <!--</div>-->
+                    <!--<label class="form-label col-xs-3 col-sm-2"><span class="c-red">*</span>缩略图：</label>-->
+                    <!--<div class="formControls col-xs-3 col-sm-4">-->
+                        <!--<input type="file"  name="typeImgurl" id="typeImgurl">-->
+                        <!--&lt;!&ndash;<input type="file" name="img" multiple="multiple" />&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="row cl">-->
+                    <!--<label class="form-label col-xs-3 col-sm-2"><span class="c-red">*</span>推荐佣金：</label>-->
+                    <!--<div class="formControls col-xs-3 col-sm-4">-->
+                        <!--<input type="text" class="input-text" placeholder="请输入推荐佣金" id="typeCommision" name="typeCommision">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<input type="text" name="communityId" id="communityId" style="display: none;">-->
+            <!--</div>-->
+            <!--<div class="col-xs-10 col-sm-10">-->
+                <!--<div class="row cl col-xs-6 col-sm-6"></div>-->
+                <!--<div class="row cl col-xs-6 col-sm-6">-->
+                    <!--<input id="type_add" class="btn btn-primary radius" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</form>-->
+    <!--<br>-->
+    <!--<br>-->
+    <input type="text" name="communityId" id="communityId" style="display: none;">
+    <table class="table table-border table-bordered table-bg">
+        <thead>
+        <tr>
+            <th scope="col" colspan="18">小区户型佣金列表</th>
+        </tr>
+        <tr class="text-c">
+            <!--<th width="50"><input type="checkbox" name="communityIds" value=""></th>-->
+            <th width="50">序号</th>
+            <!--<th width="50">户型ID</th>-->
+            <th width="100">缩略图</th>
+            <!--<th width="100">户型名称</th>-->
+            <th width="100">户型规格</th>
+            <th width="100">推荐佣金</th>
+            <th width="100">大约面积</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+</article>
+<!--<footer class="footer mt-20">-->
+    <!--<div class="container">-->
+        <!--双击 * 可进行修改修改  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        单击图片可进行修改-->
+    <!--</div>-->
+<!--</footer>-->
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+<script type="text/javascript" src="../js/common/common.js"></script>
+<script type="text/javascript" src="../js/common/urlscope.js"></script>
+<script src="../js/daiketong/house_type_manager2.min.js"></script>
+</body>
+
+</html>

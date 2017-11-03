@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--[if lt IE 9]>
+<!--<script type="text/javascript" src="lib/html5shiv.js"></script>-->
+    <!--<script type="text/javascript" src="lib/respond.min.js"></script>-->
+    <!--<![endif]&ndash;&gt;-->
+    <link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="../css/base.css"/>-->
+    <!--[if IE 6]>
+    <!--<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>-->
+    <!--<script>DD_belatedPNG.fix('*');</script>-->
+    <!--<![endif]&ndash;&gt;-->
+    <title>优惠活动管理</title>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+<article class="page-container">
+    <form class="form form-horizontal" id="form-add">
+        <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>优惠活动时间：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input id="d4311" name="startDiscountTime" class="Wdate input-text" type="text"  onFocus="WdatePicker({maxDate:'#F{$dp.$D(\'d4312\')||\'2020-10-01\'}'})" style="width:120px;"/> -
+                <input id="d4312" name="endDiscountTime" class="Wdate input-text" type="text" onFocus="WdatePicker({minDate:'#F{$dp.$D(\'d4311\')}',maxDate:'2020-10-01'})" style="width:120px;"/>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>资讯正文：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea class="input-text" name="discountInformation" id="discountInformation" placeholder="请输入资讯正文" id="informationTxt"  style="height: 250px"></textarea>
+            </div>
+        </div>
+        <input type="text" name="communityId" id="communityId" style="display: none;">
+        <input type="text" name="id" id="id" style="display: none;">
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input id="activety_add" class="btn btn-primary radius" type="button"
+                       value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+    <br>
+    <br>
+
+    <table class="table table-border table-bordered table-bg">
+        <thead>
+        <tr>
+            <th scope="col" colspan="6">优惠活动列表</th>
+        </tr>
+        <tr class="text-c" class="col-xs-3 col-sm-3">
+            <!--<th width="40">序号</th>-->
+            <th width="70">优惠活动id</th>
+            <th width="100">*活动开始时间</th>
+            <th width="100">*活动结束时间</th>
+            <th>*优惠活动内容</th>
+            <th width="40">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--<tr class="text-c">-->
+            <!--<td>vvv</td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+        <!--</tr>-->
+        </tbody>
+    </table>
+</article>
+
+<footer class="footer mt-20">
+    <div class="container">
+        <p>带 * 的可双击修改</p>
+    </div>
+</footer>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="../lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<!--<script type="text/javascript" src="../lib/datatables/1.10.0/jquery.dataTables.min.js"></script>-->
+
+<script type="text/javascript" src="../js/common/common.js"></script>
+<script type="text/javascript" src="../js/common/urlscope.js"></script>
+<script src="../js/daiketong/good-activety.min.js"></script>
+</body>
+
+</html>

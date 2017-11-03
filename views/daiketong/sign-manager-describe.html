@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--[if lt IE 9]>
+<!--<script type="text/javascript" src="lib/html5shiv.js"></script>-->
+    <!--<script type="text/javascript" src="lib/respond.min.js"></script>-->
+    <!--<![endif]&ndash;&gt;-->
+    <link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="../css/base.css"/>-->
+    <!--[if IE 6]>
+<!--<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>-->
+    <!--<script>DD_belatedPNG.fix('*');</script>-->
+    <!--<![endif]&ndash;&gt;-->
+    <title>推荐单详情</title>
+    <meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+    <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+
+    <style type="text/css">
+        .input-xiangmu {
+            border: none;
+        }
+        span{
+            color: black;
+            border-bottom: 1px solid #ddd;
+        }
+        #bigImg{
+            width: 400px;
+            height: 300px;
+            position: fixed;
+            z-index: 999;
+            border: solid 1px gray;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+            margin: auto;
+        }
+        #zhezhao{
+            width: 100%;
+            height: 100%;
+            display: none;
+            top: 0px;
+            left: 0px;
+            position: absolute;
+            z-index: 2;
+            background-color: #000;
+            opacity: 0.3;
+            filter: alpha(opacity=50); /* IE的透明度 */
+        }
+    </style>
+</head>
+
+<body>
+<article class="page-container">
+    <form class="form form-horizontal" id="form-add">
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">销售员id：地方法</span>-->
+        <!--<span class="col-xs-6 col-sm-6">推荐单id： 地方</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">销售员姓名：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">推荐单生成日期：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">销售员电话：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">流程编号推荐单流程：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">销售公司id：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">推荐单类型：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">带客人id：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">推荐单消息提示：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">带客人姓名：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">推荐单备注：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">带客人电话：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">推荐单状态：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">待客现场确认图片：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">推荐小区地址：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">推荐人id：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">推荐项目id：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">推荐人姓名：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">推荐项目名称：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">推荐人电话：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">推荐项目类型：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">被推荐人姓名：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">估算的推荐佣金：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">被推荐人电话：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">佣金领取类型：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">最终购房成交金额：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">购房合同页图片：</span>-->
+        <!--</div>-->
+        <!--<div class="row cl">-->
+        <!--<span class=" col-xs-6 col-sm-6">购房发票：</span>-->
+        <!--<span class="col-xs-6 col-sm-6">上门到访时间：</span>-->
+        <!--</div>-->
+    </form>
+</article>
+
+<div id="bigImg"></div>
+<div id="zhezhao"></div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+<script type="text/javascript" src="../js/common/common.js"></script>
+<script type="text/javascript" src="../js/common/urlscope.js"></script>
+<script type="text/javascript" src="../js/daiketong/sign-manager-describe.js"></script>
+</body>
+
+</html>

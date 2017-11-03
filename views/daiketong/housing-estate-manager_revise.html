@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/html5shiv.js"></script>
+    <script type="text/javascript" src="lib/respond.min.js"></script>
+    <!--<![endif]&ndash;&gt;-->
+    <link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="../css/base.css"/>-->
+    <!--[if IE 6]>
+    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <!--<script>DD_belatedPNG.fix('*');</script>-->
+    <!--<![endif]&ndash;&gt;-->
+    <title>修改小区管理</title>
+    <meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+    <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+
+    <style type="text/css">
+        .input-xiangmu {
+            border: none;
+        }
+        .idcardimg1{
+            width: 10rem;
+            height: 4rem;
+            position: relative;
+            border: solid 1px grey;
+            z-index: 1;
+        }
+        .onclick1{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 3.2rem;
+            margin: 0 auto;
+            overflow: hidden;
+            left: 0;
+        }
+        .onclick1 input{
+            margin: 0 auto;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 99;
+        }
+    </style>
+</head>
+
+<body onkeydown="keyLogin();">
+<article class="page-container">
+    <form class="form form-horizontal" id="form-revise"  enctype="multipart/form-data">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>小区封面图片：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <img src="" alt="" id="fengmian" class='iconBox'>
+                <input type="file" class="input-xiangmu" value="" placeholder="" id="imgUrl" name="imgUrl">
+
+                <!--<div class="idcardimg1">-->
+                    <!--<div class="onclick1"><u>修改图片+</u>-->
+                        <!--<input type="file" style="display: none;">-->
+                        <!--<input type="text" name="configId" id="configId" style="display: none;">-->
+                        <!--&lt;!&ndash;<input id="fupPhoto1" type="file" name="idCardImg1"/>&ndash;&gt;-->
+                        <!--<input type="file" class="input-xiangmu" value="" placeholder="" id="imgUrl" name="imgUrl">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>小区名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="" class="input-text" placeholder="请输入小区名称" id="name" name="name">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>小区地址：</label>
+            省份 ：<select name="provinceCode" onclick="common.bind_Sanji()" class="input-text" id="sheng" style="width:100px"><option value=" ">全部</option></select>&nbsp;&nbsp;&nbsp;
+            城市 ：<select name="cityCode" class="input-text" id="shi" style="width:100px" ><option value=" ">全部</option></select>&nbsp;&nbsp;&nbsp;
+            区域 ：<select name="countyCode" class="input-text" id="qu" style="width:100px" ><option value=" ">全部</option></select>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>详细地址：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="请输入小区地址" id="address" name="address">
+            </div>
+        </div>
+        <!--<div class="row cl">-->
+            <!--<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>小区坐标：</label>-->
+            <!--<div class="formControls col-xs-8 col-sm-9">-->
+                <!--<input type="" class="input-text" placeholder="例如：120" id="coordinate" style="width: 200px"> ,-->
+                <!--<input type="" class="input-text" placeholder="例如：30" id="coordinate2" style="width: 200px">-->
+                <!--<input type="text" id="coordinate3" name="coordinate" style="width: 0;height: 0;position: absolute;opacity: 0;">-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>小区户型范围描述：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="例如：一室-四室" id="houseTypeRange" name="houseTypeRange">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>小区房子面积范围：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="" class="input-text" placeholder="例如：80-100" id="houseProportionRange" name="houseProportionRange">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>物业公司：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="请输入物业公司" id="propertyId">
+                <input type="hidden" id="propertyVal" name="propertyId">
+                <ul class="propertyList">
+                </ul>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>开发商名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="请输入开发商名称" id="devloper" name="devloper">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>销售商：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="请输入销售方" id="sellersId">
+                <input type="hidden" id="sellersVal" name="sellersId">
+                <ul class="sellersList">
+                </ul>
+            </div>
+        </div>
+
+        <input type="text" name="id" id="reviseid" style="display:none;" />
+
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input type="text" value="0" id="houseStatus" style="display:none;" /> <!-- 二手房小区状态 -->
+                <input id="revise_add" class="btn btn-primary radius" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+<!--<img src="" alt="" id="fengmian" class='iconBox'>-->
+
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        function getObjectURL(file) {
+            var url = null;
+            if (window.createObjectURL != undefined) { // basic
+                url = window.createObjectURL(file);
+            } else if (window.URL != undefined) { // mozilla(firefox)
+                url = window.URL.createObjectURL(file);
+            } else if (window.webkitURL != undefined) { // webkit or chrome
+                url = window.webkitURL.createObjectURL(file);
+            }
+            return url;
+        }
+        var cdimg  = $('img');
+        var cdfile = $('input[type="file"]');
+        cdfile.change(function() {
+            if (this.files && this.files[0]) {
+                var objUrl = getObjectURL(this.files[0]);
+                if (objUrl) {
+                    $(this).siblings('img').attr("src", objUrl);
+//                    $(".idcardimg1").css({"background":"url("+objUrl+") no-repeat","background-size":"100% 100%"});
+                }
+            }
+        });
+    })
+
+    function keyLogin() {//在body上面  onkeydown="keyLogin();"
+        if (event.keyCode == 13) { //回车键的键值为13
+            document.getElementById("revise_add").click(); //调用登录按钮的登录事件
+        }
+    }
+</script>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+<script type="text/javascript" src="../js/common/common.js"></script>
+<script type="text/javascript" src="../js/common/urlscope.js"></script>
+<script type="text/javascript" src="../js/daiketong/housing-estate-manager_revise.min.js"></script>
+</body>
+
+</html>

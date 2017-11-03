@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/html5shiv.js"></script>
+    <script type="text/javascript" src="lib/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css"/>
+    <link rel="stylesheet" href="../lib/layer/2.4/skin/layer.css"/>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <title>内部户型</title>
+    <style>
+        .sanji, #pageDiv {
+            margin-top: 10px;
+        }
+
+        #xiangmu {
+            padding: 2px;
+            position: absolute;
+            left: 26px;
+            top: 282px;
+            border: solid 1px black;
+            height: 26px;
+        }
+    </style>
+</head>
+
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 带客通 <span
+        class="c-gray en">&gt;</span> 内部户型
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+       href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
+</nav>
+
+<div class="page-container">
+    户型类型 ：
+    <select name="communityhouse-type" class="input-text communityhouse-type" style="width:250px"
+            onchange="panel_CommunityHouse.change_CommunityHouseType(this)">
+        <option value="1" >新房</option>
+        <option value="2">所有二手房</option>
+    </select>
+</div>
+
+
+<div class="page-container">
+    <div class="text-c"> 日期范围：
+        <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin"
+               class="input-text Wdate" style="width:120px;"> -
+        <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax"
+               class="input-text Wdate" style="width:120px;">
+        <input type="text" class="input-text" style="width:250px" placeholder="输入小区名称" id="communityName" name="">
+        <!--<button type="submit" class="btn btn-success" id="" name="" onclick=panel_CommunityHouse.communityHouse_search()><i class="Hui-iconfont">&#xe665;</i> 搜索</button>-->
+
+        <button type="submit" class="btn btn-success" id="" name="" onclick=panel_CommunityHouse.btn_findByScreen()><i
+                class="Hui-iconfont">&#xe665;</i> 搜索
+        </button>
+    </div>
+    <div class="text-c sanji">
+        <!--名称：<input name="Screen_name" type="text" class="input-text" style="width:250px" placeholder="输入相关名称" id="proName">&nbsp;&nbsp;&nbsp;-->
+        省份 ：<select name="Screen_provinceCode" class="input-text" id="sheng" style="width:100px"></select>&nbsp;&nbsp;&nbsp;
+        城市 ：<select name="Screen_cityCode" class="input-text" id="shi" style="width:100px"></select>&nbsp;&nbsp;&nbsp;
+        区域 ：<select name="Screen_countyCode" class="input-text" id="qu" style="width:100px"></select>&nbsp;&nbsp;&nbsp;
+        <!--户型 ：<select name="Screen_housetypeId" class="input-text" id="houseType" style="width:100px"></select>&nbsp;&nbsp;&nbsp;-->
+
+        <!--<button class="btn btn-success" onclick="panel_CommunityHouse.btn_findByScreen()"><i class="Hui-iconfont">&#xe665;</i> 搜索-->
+        <!--</button>-->
+        <br/>&nbsp;&nbsp;&nbsp;
+
+        <!--列表内容-->
+        <div class="cl pd-5 bg-1 bk-gray mt-20">
+            <span class="l" id="CommunityHouse_btn">
+                        <!--按钮-->
+                <!--<a href="javascript:;"-->
+                   <!--onclick=panel_CommunityHouse.communityhouseAdd("添加新房","communityhouse-list-add.html","800","500")-->
+                   <!--class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加新房</a>-->
+
+                    </span>
+            <span class="r">共有数据：<strong></strong> 条</span>
+        </div>
+
+        <!--<div class="mt-20 ">-->
+            <table class="table table-border table-bordered table-bg ">
+                <!--列表内容-->
+                <thead>
+                <tr>
+                    <th scope="col" colspan="19">内部户型列表</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="30">序号</th>
+                    <th width="100">小区封面</th>
+                    <th width="100">小区名称</th>
+                    <th width="150">小区地址</th>
+                    <th width="100">户型范围</th>
+                    <th width="80">面积范围</th>
+                    <th width="60">均价(元)</th>
+                    <th width="60">起价(元)</th>
+                    <th width="60">佣金(元)</th>
+                    <th width="130">数据添加时间</th>
+                    <th width="130">最新开盘日期</th>
+                    <th width="130">最早交房日期</th>
+                    <th width="100">物业公司</th>
+                    <th width="100">开发商</th>
+                    <th width="150">销售商</th>
+                    <th>
+                        <select name="" id="detailStatus" onchange="panel_CommunityHouse.detailStatusXuan()">
+                            <option value="">状态</option>
+                            <option value="0">启用</option>
+                            <option value="1">停用</option>
+                            <option value="2">待审核</option>
+                            <option value="4">未通过</option>
+                        </select>
+                    </th>
+                    <th width="30">操作</th>
+                    <th width="60">优惠活动</th>
+                    <th width="60">修改内容</th>
+                </tr>
+                </thead>
+                <tbody id="CommunityHouse_table">
+
+                </tbody>
+            </table>
+            <div id="pageDiv"></div>
+        <!--</div>-->
+
+    </div>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="../lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="../lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../lib/laypage/1.2/laypage.js"></script>
+
+<script src="../js/common/common.js"></script>
+<script src="../js/common/urlscope.js"></script>
+<script src="../js/daiketong/communityhouse-list2.min.js"></script>
+<script>
+</script>
+</body>
+
+</html>

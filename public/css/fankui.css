@@ -1,0 +1,144 @@
+html, body {
+    height: 100%;
+}
+
+#pageDiv {
+    margin-top: -10px;
+    text-align: center;
+}
+
+#feedback {
+    width: 100%;
+    height: 95%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: solid  #d5d5d5 1px;
+}
+
+#feedback > ul {
+    margin: 10px;
+    text-align: center;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+#feedback > ul > li {
+    float: left;
+    height: 30px;
+    width: 100px;
+    line-height: 30px;
+    border: solid grey 1px;
+}
+
+.feedbackDiv {
+    height: 50px;
+    line-height: 50px;
+}
+
+.clearfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    font-size: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.describe {
+    width: 35%;
+    height: 40%;
+    margin-left: 50px;
+    /*min-width: 450px;*/
+    /*min-height: 200px;*/
+    display: inline-block;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.describe p {
+    height: 18px;
+    line-height: 18px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.describe .describeLi {
+    margin-top: 5px;
+    border: solid #d5d5d5 1px;
+    min-height: 240px;
+    position: relative;
+}
+
+.describeneirong {
+    width: 90%;
+    height: 140px;
+    border-bottom: solid #d5d5d5 1px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+
+}
+
+.describeImg {
+    width: 100%;
+    height: 80px;
+    border-bottom: solid #d5d5d5 2px;
+
+}
+
+.button {
+    width: 60px;
+    height: 30px;
+    display: block;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    background: #5a98de;
+    color: white;
+    margin: 10px auto;
+}
+
+#bigImg{
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    z-index: 999;
+    border: solid 1px gray;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    margin: auto;
+}
+#zhezhao{
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 2;
+    background-color: #000;
+    opacity: 0.3;
+    filter: alpha(opacity=50); /* IE的透明度 */
+}
+
+
+.feedbackDescribe .describe a:hover{
+    text-decoration:none;
+    color: black;
+}

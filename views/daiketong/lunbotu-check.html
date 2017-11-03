@@ -1,0 +1,131 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--[if lt IE 9]>
+<!--<script type="text/javascript" src="lib/html5shiv.js"></script>-->
+    <!--<script type="text/javascript" src="lib/respond.min.js"></script>-->
+    <!--<![endif]&ndash;&gt;-->
+    <link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css"/>
+    <!--[if IE 6]>
+    <!--<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>-->
+    <!--<script>DD_belatedPNG.fix('*');</script>-->
+    <!--<![endif]&ndash;&gt;-->
+    <title>轮播图管理</title>
+    <style>
+        .idcardimg1{
+            width: 5rem;
+            height: 3.2rem;
+            background-size: 100% 100%;
+            margin: 0.5rem auto;
+            position: relative;
+        }
+         .onclick1{
+            width: 100%;
+            height: 100%;
+             font-size: 20px;
+             text-align: center;
+             line-height: 3.2rem;
+            margin: 0 auto;
+            position: absolute;
+            overflow: hidden;
+             color: #0000ff;
+             font-weight: bold;
+             left: 0;
+        }
+         .onclick1 input{
+             margin: 0 auto;
+             left: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+             position: absolute;
+        }
+        .row{
+        }
+    </style>
+</head>
+
+<body>
+<article class="page-container">
+    <!--<footer class="footer mt-20">-->
+        <div class="container">
+            按住 Ctrl 可进行多选图片
+        </div>
+    <!--</footer>-->
+    <table class="table table-border table-bordered table-bg">
+        <thead>
+        <tr>
+            <th scope="col" colspan="8">项目图片列表</th>
+        </tr>
+        <tr class="text-c" class="col-xs-3 col-sm-3">
+            <!--<th width="50"><input type="checkbox" name="communityIds" value=""></th>-->
+            <th>序号</th>
+            <!--<th>轮播图id</th>-->
+            <!--<th>图片名称</th>-->
+            <th>图片</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="tbodyId">
+
+        </tbody>
+    </table>
+    <!--<br>-->
+    <!--<br>-->
+    <form class="form form-horizontal" id="form-add" onsubmit="return panel.fileCountCheck(this);">
+        <div class="row cl">
+            <div class="idcardimg1">
+                <div class="onclick1"><u>添加+</u>
+                    <input type="file" style="display: none;">
+                    <input type="text" name="configId" id="configId" style="display: none;">
+                    <!--<input id="fupPhoto1" type="file" name="idCardImg1"/>-->
+                    <input type="file" id="carouselFigureImg"  name="carouselFigureImg"  multiple="multiple" />
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-12">
+                <div class="row cl col-xs-6 col-sm-6"></div>
+                <div class="row cl col-xs-6 col-sm-6">
+                    <input type="text" value="7" id="type" name="type" style="display:none;"/> <!-- 二手房小区状态 -->
+                    <input id="add" class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                </div>
+            </div>
+        </div>
+    </form>
+    <br>
+    <br>
+</article>
+<!--<footer class="footer mt-20">-->
+    <!--<div class="container">-->
+        <!--<p>点击图片可进行修改</p>-->
+    <!--</div>-->
+<!--</footer>-->
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+<script type="text/javascript" src="../js/common/common.js"></script>
+<script type="text/javascript" src="../js/common/urlscope.js"></script>
+<script src="../js/daiketong/lunbotu-check.js"></script>
+</body>
+
+</html>
